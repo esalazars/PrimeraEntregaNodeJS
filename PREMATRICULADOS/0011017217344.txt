@@ -1,0 +1,13 @@
+		Tecnologico de Antioquia
+		Institucion Universitaria
+ 
+Registro de Prematricula:
+ 
+Informacion del Estudiante: 
+Nombre:		Eladio Salazar 
+Cedula:		1017217344 
+Informacion del Curso: 
+Id:			001 
+Curso:		Matematicas 
+Duracion:	20 semanas 
+Valor:		60000 Pesos
