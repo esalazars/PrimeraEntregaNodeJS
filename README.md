@@ -20,7 +20,9 @@ ser necesario:
 3.  files stream: A veces viene por deCfeto con la instalacion de 
                 node.js, en caso de ser necesario se instala desde
                 consola de windows: npm install files-stream
-
+4.  express : Libreria usada para establecer un servidor, usada en la version v1.0.2
+	      para imprimir en el navegador el registro de la matricula. Ingresar
+	      npm i express
 Ejecucion:
 Para la ejecucion del programa abra una terminal como
 administrador y ubicarse en la carpeta donde se encuentra el programa, entonces:
@@ -38,7 +40,8 @@ administrador y ubicarse en la carpeta donde se encuentra el programa, entonces:
         de texto(.txt) en la carpeta PREMATRICULADOS, o en caso de no poder crear la carpeta en 
         la ejecucion del programa, por defecto se guardara en el mismo directorio, y el nombre 
         del registro de prematricula esta conformado por id del curso y cedula del estudiante.
-        
+    *	A partir de la version V1.0.2 no se guardara en un .txt sino que se mostrara en el navegador
+	en localhost:3000 todo el contenido del .txt que se creaba.
 2.  Si desea solo ver los cursos disponibles:
         node main.js
    
