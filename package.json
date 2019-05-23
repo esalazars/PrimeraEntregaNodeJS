@@ -17,6 +17,7 @@
   "author": "Eladio Salazar Suarez esalazars@unal.edu.co",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.0",
     "yargs": "^13.2.2"
   }
 }

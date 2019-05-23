@@ -2,13 +2,37 @@
     inscripcion.js :
     Este script contendra las funcionalidades necesarias para
     la inscripcion del interesado en el curso seleccionado
+    Update 1: Se modifico para que no genere archivo sino que imprima 
+    en el navegador lo que quedaria como registro de la matricula
 
 */
 
 //Importo libreria para manejo de archivos
 const fs = require('fs');  
+//UP1 : Se importa la libreria express
+const express = require('express');
+const app = express();
 
+//Para no eliminar lo hecho para archivos, comentare todo eso y copiare, modificando sobre la copia
 let inscribir = (curso, interesado) => {
+    
+    //Texto que contendra el archivo de registro
+    const encabezado = '<h1><center>Tecnologico de Antioquia<br>Institucion Universitaria<br></center></h1><h3>Registro de Prematricula:<br></h3>';
+    const info = '<p><b>Informacion del Estudiante:<br>Nombre:</b>'+ 
+    interesado.nombre + '<br><b>Cedula:</b>' + interesado.cedula + 
+    '<br><br><b>Informacion del Curso:<br>Id:</b>' + curso.id + '<br><b>Curso:</b>' + 
+    curso.nombre + '<br><b>Duracion:</b>'+ curso.duracion + '<br><b>Valor:</b>' + 
+    curso.valor + ' Pesos<br></p>'; 
+    let texto = encabezado + info;
+    app.get('/',
+        function(req, resp){
+            let doc_html = "<!DOCTYPE html><head><meta charset='UTF-8'><title>Simiopoly</title></head><body>" + 
+                        texto + "</body>";
+            resp.send(doc_html);
+        }
+    );
+    app.listen(3000);
+    /*
     const file = './PREMATRICULADOS/'+ curso.id + '' + interesado.cedula + '.txt'; //Nombre de archivo diferente para cada estudiante
     //Texto que contendra el archivo de registro
     const encabezado = '\t\tTecnologico de Antioquia\n\t\tInstitucion Universitaria\n'+
@@ -49,7 +73,7 @@ let inscribir = (curso, interesado) => {
             console.log('Prematricula exitosa.');
         });
     });
-
+    */
 };
 
 module.exports = {
